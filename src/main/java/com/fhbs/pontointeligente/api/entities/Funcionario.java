@@ -5,6 +5,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -19,8 +20,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
-
-import org.springframework.data.annotation.Transient;
+import javax.persistence.Transient;
 
 import com.fhbs.pontointeligente.api.enums.PerfilEnum;
 
@@ -98,10 +98,10 @@ public class Funcionario implements Serializable {
 		return valorHora;
 	}
 
-//	@Transient
-//	public Optional<BigDecimal> getValorHoraOpt() {
-//		return Optional.ofNullable(valorHora);
-//	}
+	@Transient
+	public Optional<BigDecimal> getValorHoraOpt() {
+		return Optional.ofNullable(valorHora);
+	}
 	
 	public void setValorHora(BigDecimal valorHora) {
 		this.valorHora = valorHora;
@@ -112,10 +112,10 @@ public class Funcionario implements Serializable {
 		return qtdHorasTrabalhoDia;
 	}
 	
-//	@Transient
-//	public Optional<Float> getQtdHorasTrabalhoDiaOpt() {
-//		return Optional.ofNullable(qtdHorasTrabalhoDia);
-//	}
+	@Transient
+	public Optional<Float> getQtdHorasTrabalhoDiaOpt() {
+		return Optional.ofNullable(qtdHorasTrabalhoDia);
+	}
 
 	public void setQtdHorasTrabalhoDia(Float qtdHorasTrabalhoDia) {
 		this.qtdHorasTrabalhoDia = qtdHorasTrabalhoDia;
@@ -126,10 +126,10 @@ public class Funcionario implements Serializable {
 		return qtdHorasAlmoco;
 	}
 	
-//	@Transient
-//	public Optional<Float> getQtdHorasAlmocoOpt() {
-//		return Optional.ofNullable(qtdHorasAlmoco);
-//	}
+	@Transient
+	public Optional<Float> getQtdHorasAlmocoOpt() {
+		return Optional.ofNullable(qtdHorasAlmoco);
+	}
 
 	public void setQtdHorasAlmoco(Float qtdHorasAlmoco) {
 		this.qtdHorasAlmoco = qtdHorasAlmoco;
